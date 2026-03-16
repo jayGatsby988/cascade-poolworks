@@ -6,7 +6,7 @@ import { STRIP_IMAGE } from '@/lib/gallery';
 
 const stats = [
   { value: 2003, suffix: '', label: 'In business since' },
-  { value: 50, suffix: '+', label: 'Years of experience' },
+  { value: 500, suffix: '+', label: 'Pools built' },
   { value: 100, suffix: '%', label: 'Of work is referrals' },
 ];
 
@@ -29,7 +29,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
   }, [springValue, value]);
 
   return (
-    <span ref={ref} className="font-display text-5xl font-medium text-amber-800 md:text-6xl">
+    <span ref={ref} className="font-display text-5xl font-medium text-amber-400 md:text-6xl">
       {displayValue}
       {suffix}
     </span>

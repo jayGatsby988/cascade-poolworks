@@ -90,7 +90,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1.6 }}
             className="mt-10 text-sm font-medium uppercase tracking-[0.2em] text-white/80"
           >
-            Since 2003 · Family owned and operated · Licensed, bonded and insured
+            Since 2003 · 500+ pools built · Licensed, bonded & insured
           </motion.p>
         </motion.div>
       </motion.div>

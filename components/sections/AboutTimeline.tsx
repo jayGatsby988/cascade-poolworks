@@ -42,11 +42,11 @@ export default function AboutTimeline() {
   const isInView = useInView(ref, { once: false, amount: 0.3 });
 
   return (
-    <section ref={ref} className="relative min-h-screen bg-white px-6 py-24 md:py-32 overflow-hidden">
+    <section ref={ref} className="relative min-h-screen bg-[rgb(var(--warm-white))] px-6 py-24 md:py-32 overflow-hidden">
       <div className="relative z-10 mx-auto max-w-7xl">
         <Link
           href="/"
-          className="mb-16 inline-flex items-center gap-2 text-sm font-medium text-blue-600 transition-colors hover:text-blue-700"
+          className="mb-16 inline-flex items-center gap-2 text-sm font-medium text-amber-800/80 transition-colors hover:text-amber-800"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Home
@@ -58,19 +58,22 @@ export default function AboutTimeline() {
           transition={{ duration: 0.8 }}
           className="mb-24 text-center"
         >
-          <h1 className="mb-6 text-6xl font-bold tracking-tight text-slate-900 md:text-7xl">
+          <p className="font-display mb-4 text-sm font-medium uppercase tracking-[0.35em] text-amber-800/80">
+            Our Journey
+          </p>
+          <h1 className="font-display mb-6 text-5xl font-medium tracking-tight text-[rgb(var(--charcoal))] md:text-7xl">
             Our Story
           </h1>
-          <p className="mb-4 text-xl text-slate-600 md:text-2xl">
-            Built on integrity, driven by innovation
+          <p className="mb-4 text-xl text-[rgb(80,80,80)] md:text-2xl">
+            Built on integrity, driven by craft
           </p>
-          <p className="text-sm font-medium uppercase tracking-[0.12em] text-slate-500">
-            Since 2003 · Over 50 years experience · Family owned and operated · Licensed, bonded and insured
+          <p className="text-sm font-medium uppercase tracking-[0.12em] text-[rgb(80,80,80)]/60">
+            Since 2003 · 500+ pools built · Family owned and operated · Licensed, bonded & insured
           </p>
         </motion.div>
 
         <div className="relative">
-          <div className="absolute left-1/2 top-0 h-full w-[2px] -translate-x-1/2 bg-gradient-to-b from-blue-600 via-slate-300 to-transparent" />
+          <div className="absolute left-1/2 top-0 h-full w-[2px] -translate-x-1/2 bg-gradient-to-b from-amber-500 via-amber-300/40 to-transparent" />
 
           {milestones.map((milestone, index) => (
             <motion.div
@@ -91,32 +94,32 @@ export default function AboutTimeline() {
                   index % 2 === 0 ? 'text-right md:pr-16' : 'text-left md:pl-16'
                 }`}
               >
-                <div className="group rounded-xl border border-slate-200 bg-slate-50/80 backdrop-blur-sm transition-all hover:border-blue-400 hover:bg-white overflow-hidden shadow-sm">
+                <div className="group overflow-hidden rounded-2xl border border-[rgb(230,228,225)] bg-white shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] backdrop-blur-sm transition-all duration-300 hover:border-amber-400/50 hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.12)]">
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={milestone.image}
                       alt={milestone.title}
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[rgb(var(--charcoal))]/80 via-[rgb(var(--charcoal))]/30 to-transparent" />
                     <div className="absolute bottom-4 left-0 right-0 px-8">
-                      <div className="text-5xl font-bold text-blue-500">
+                      <div className="font-display text-5xl font-medium text-amber-400">
                         {milestone.year}
                       </div>
                     </div>
                   </div>
                   <div className="p-8">
-                    <h3 className="mb-4 text-3xl font-bold text-slate-900">
+                    <h3 className="font-display mb-4 text-3xl font-medium text-[rgb(var(--charcoal))]">
                       {milestone.title}
                     </h3>
-                    <p className="text-lg leading-relaxed text-slate-600">
+                    <p className="text-lg leading-relaxed text-[rgb(80,80,80)]">
                       {milestone.description}
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="absolute left-1/2 h-6 w-6 -translate-x-1/2 rounded-full border-4 border-blue-600 bg-white shadow" />
+              <div className="absolute left-1/2 h-6 w-6 -translate-x-1/2 rounded-full border-4 border-amber-500 bg-[rgb(var(--warm-white))] shadow-sm" />
             </motion.div>
           ))}
         </div>

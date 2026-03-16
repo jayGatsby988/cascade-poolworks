@@ -55,7 +55,7 @@ export default function Footer() {
                 We design and build pools only—in Seattle and Washington. Infinity edges, spas, resort-style pools, built for the way you live.
               </p>
               <p className="mb-6 text-sm font-medium text-white/50">
-                Since 2003 · Over 50 years experience · Family owned and operated · Licensed, bonded and insured
+                Since 2003 · 500+ pools built · Family owned and operated · Licensed, bonded & insured
               </p>
               <div className="flex gap-3">
                 {socialLinks.map((social) => {

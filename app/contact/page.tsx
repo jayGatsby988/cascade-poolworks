@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { format } from 'date-fns';
 import { Calendar as CalendarIcon, ArrowLeft } from 'lucide-react';
@@ -84,23 +85,40 @@ export default function ContactPage() {
   return (
     <main className="relative min-h-screen bg-[rgb(var(--warm-white))] pt-24">
       <div className="mx-auto max-w-2xl px-6 py-16">
-        <Link
-          href="/"
-          className="mb-12 inline-flex items-center gap-2 text-sm font-medium text-amber-800/80 transition-colors hover:text-amber-800"
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          <ArrowLeft className="h-4 w-4" />
-          Back to Home
-        </Link>
+          <Link
+            href="/"
+            className="mb-12 inline-flex items-center gap-2 text-sm font-medium text-amber-800/80 transition-colors hover:text-amber-800"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Home
+          </Link>
+        </motion.div>
 
-        <div className="mb-12">
+        <motion.div
+          className="mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+        >
+          <p className="font-display mb-3 text-sm font-medium uppercase tracking-[0.3em] text-amber-800/80">Get in touch</p>
           <h1 className="font-display text-4xl font-medium tracking-tight text-[rgb(var(--charcoal))] md:text-5xl">
             Book a meeting
           </h1>
           <p className="mt-4 text-lg text-[rgb(80,80,80)]">
             Share your details and pick a time. We’ll confirm and reach out before the call.
           </p>
-        </div>
+        </motion.div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className="space-y-4">
             <Label htmlFor="name" className="text-[rgb(var(--charcoal))]">
@@ -212,6 +230,7 @@ export default function ContactPage() {
             Request meeting
           </Button>
         </form>
+        </motion.div>
       </div>
       <Footer />
     </main>
