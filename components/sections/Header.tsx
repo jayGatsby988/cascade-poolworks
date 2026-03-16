@@ -47,21 +47,21 @@ export default function Header() {
         initial={{ y: -100 }}
         animate={{ y: hidden && !mobileOpen ? -100 : 0 }}
         transition={{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
-        className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${
+        className={`fixed left-0 right-0 top-0 z-50 transition-all duration-700 ${
           scrolled
-            ? 'bg-[rgb(18,18,20)]/85 shadow-[0_4px_30px_rgba(0,0,0,0.3)] backdrop-blur-xl'
-            : 'bg-transparent'
+            ? 'bg-[rgb(10,10,12)]/95 shadow-[0_8px_40px_rgba(0,0,0,0.5)] backdrop-blur-2xl'
+            : 'bg-gradient-to-b from-[rgb(10,10,12)]/90 via-[rgb(10,10,12)]/60 to-transparent backdrop-blur-sm'
         }`}
       >
         {/* Gold accent line at the very top */}
         <motion.div
-          className="h-[1px] w-full bg-gradient-to-r from-transparent via-amber-500/60 to-transparent"
+          className="h-[1px] w-full bg-gradient-to-r from-transparent via-amber-400/50 to-transparent"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1.5, delay: 0.2, ease: 'easeOut' }}
         />
 
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-10">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -73,16 +73,16 @@ export default function Header() {
               className="group relative flex items-center"
               aria-label="Cascade Poolworks home"
             >
-              <div className="relative overflow-hidden rounded-lg px-3 py-2 transition-all duration-300 group-hover:bg-white/5">
-                <CascadeLogo size={40} className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />
-                {/* Subtle gold shimmer on hover */}
-                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-amber-400/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+              <div className="relative overflow-hidden rounded-md px-3 py-2 transition-all duration-500">
+                <CascadeLogo size={44} className="h-10 w-auto object-contain brightness-0 invert transition-all duration-300 group-hover:scale-105" />
+                {/* Gold shimmer on hover */}
+                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-amber-400/15 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
               </div>
             </Link>
           </motion.div>
 
           {/* Desktop Nav */}
-          <nav className="hidden items-center gap-1 md:flex">
+          <nav className="hidden items-center gap-1 lg:flex">
             {navLinks.map((link, i) => {
               const isActive = pathname === link.href;
               return (
@@ -97,10 +97,10 @@ export default function Header() {
                     className="group relative px-5 py-2.5"
                   >
                     <span
-                      className={`relative z-10 text-[13px] font-medium uppercase tracking-[0.15em] transition-colors duration-300 ${
+                      className={`relative z-10 text-[13px] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 ${
                         isActive
                           ? 'text-amber-400'
-                          : 'text-white/70 group-hover:text-white'
+                          : 'text-white/90 group-hover:text-amber-300'
                       }`}
                     >
                       {link.label}
@@ -110,13 +110,13 @@ export default function Header() {
                     {isActive && (
                       <motion.div
                         layoutId="activeNav"
-                        className="absolute bottom-0 left-1/2 h-[2px] w-6 -translate-x-1/2 bg-gradient-to-r from-amber-400/0 via-amber-400 to-amber-400/0"
+                        className="absolute bottom-0 left-1/2 h-[2px] w-8 -translate-x-1/2 rounded-full bg-gradient-to-r from-amber-500/0 via-amber-400 to-amber-500/0"
                         transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                       />
                     )}
 
                     {/* Hover glow */}
-                    <div className="absolute inset-0 rounded-lg bg-white/0 transition-all duration-300 group-hover:bg-white/[0.04]" />
+                    <div className="absolute inset-0 rounded-lg bg-white/0 transition-all duration-300 group-hover:bg-white/[0.05]" />
                   </Link>
                 </motion.div>
               );
@@ -127,14 +127,14 @@ export default function Header() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.6, ease: 'easeOut' }}
-              className="ml-4"
+              className="ml-6"
             >
               <Link
                 href="/contact"
-                className="group relative overflow-hidden rounded-full border border-amber-500/30 bg-amber-600/10 px-6 py-2.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-amber-400 backdrop-blur-sm transition-all duration-300 hover:border-amber-400/50 hover:bg-amber-600/20 hover:shadow-[0_0_20px_rgba(217,161,12,0.15)]"
+                className="group relative overflow-hidden rounded-full bg-gradient-to-r from-amber-600 to-amber-500 px-7 py-2.5 text-[13px] font-bold uppercase tracking-[0.12em] text-white shadow-[0_0_20px_rgba(217,161,12,0.2)] transition-all duration-300 hover:shadow-[0_0_30px_rgba(217,161,12,0.35)] hover:scale-[1.03]"
               >
                 <span className="relative z-10">Get a Quote</span>
-                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-amber-400/10 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
+                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-500 group-hover:translate-x-full" />
               </Link>
             </motion.div>
           </nav>
@@ -143,7 +143,7 @@ export default function Header() {
           <motion.button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="relative flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/80 transition-all duration-300 hover:border-amber-400/30 hover:bg-white/5 hover:text-white md:hidden"
+            className="relative flex h-11 w-11 items-center justify-center rounded-full border border-white/20 text-white transition-all duration-300 hover:border-amber-400/40 hover:bg-white/10 lg:hidden"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             whileTap={{ scale: 0.92 }}
           >
@@ -173,12 +173,8 @@ export default function Header() {
           </motion.button>
         </div>
 
-        {/* Bottom border - subtle gold gradient */}
-        <div
-          className={`h-[1px] w-full transition-opacity duration-500 ${
-            scrolled ? 'opacity-100' : 'opacity-0'
-          } bg-gradient-to-r from-transparent via-amber-500/20 to-transparent`}
-        />
+        {/* Bottom border */}
+        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
       </motion.header>
 
       {/* Mobile Menu - Full Screen Overlay */}
@@ -189,7 +185,7 @@ export default function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[rgb(12,12,14)]/98 backdrop-blur-2xl md:hidden"
+            className="fixed inset-0 z-40 bg-[rgb(8,8,10)]/98 backdrop-blur-2xl lg:hidden"
           >
             <nav className="flex h-full flex-col items-center justify-center gap-2">
               {navLinks.map((link, i) => {
@@ -238,7 +234,7 @@ export default function Header() {
                 <Link
                   href="/contact"
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-full border border-amber-500/40 bg-amber-600/10 px-10 py-3.5 text-sm font-semibold uppercase tracking-[0.15em] text-amber-400 transition-all duration-300 hover:bg-amber-600/20"
+                  className="rounded-full bg-gradient-to-r from-amber-600 to-amber-500 px-10 py-3.5 text-sm font-bold uppercase tracking-[0.15em] text-white shadow-[0_0_25px_rgba(217,161,12,0.25)] transition-all duration-300 hover:shadow-[0_0_35px_rgba(217,161,12,0.4)]"
                 >
                   Get a Quote
                 </Link>
