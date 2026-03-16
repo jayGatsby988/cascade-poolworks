@@ -73,8 +73,8 @@ export default function Header() {
               className="group relative flex items-center"
               aria-label="Cascade Poolworks home"
             >
-              <div className="relative overflow-hidden rounded-md px-3 py-2 transition-all duration-500">
-                <CascadeLogo size={44} className="h-10 w-auto object-contain brightness-0 invert transition-all duration-300 group-hover:scale-105" />
+              <div className="relative overflow-hidden rounded-lg bg-white/95 px-3 py-1.5 shadow-sm transition-all duration-500 group-hover:bg-white">
+                <CascadeLogo size={44} className="h-10 w-auto object-contain transition-all duration-300 group-hover:scale-105" />
                 {/* Gold shimmer on hover */}
                 <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-amber-400/15 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
               </div>
