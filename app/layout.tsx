@@ -8,10 +8,13 @@ const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-sans' });
 export const metadata: Metadata = {
   title: 'Cascade Poolworks | Luxury Pool Design & Construction | Seattle, Washington',
   description: 'Cascade Poolworks designs and builds pools only—in Seattle and the greater Washington area. Infinity pools, spas, resort-style pools.',
+  metadataBase: new URL('https://cascade-poolworks.netlify.app'),
   openGraph: {
     images: [
       {
-        url: 'https://bolt.new/static/og_default.png',
+        url: '/cascade-logo.png',
+        width: 1024,
+        height: 380,
       },
     ],
   },
@@ -19,7 +22,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     images: [
       {
-        url: 'https://bolt.new/static/og_default.png',
+        url: '/cascade-logo.png',
       },
     ],
   },
